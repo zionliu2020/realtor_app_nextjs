@@ -1,0 +1,224 @@
+@import url('https://fonts.font.im/css?family=Roboto+Condensed');
+@import url('https://fonts.font.im/css?family=Ubuntu');
+@import url('https://fonts.font.im/css?family=Source+Sans+Pro');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  .root {
+    @apply w-full min-h-screen flex justify-between items-center flex-col;
+  }
+  main {
+    @apply w-full 2xl:w-[90%] flex-1  px-4;
+  }
+  h1 {
+    @apply text-2xl font-bold;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  h2 {
+    @apply text-lg sm:text-xl font-semibold;
+  }
+}
+
+/* ----------------------navbar------------------ */
+.nav-container {
+  @apply w-full flex flex-row justify-between items-center gap-12 p-4 bg-[#51b8e7];
+}
+.nav-logo {
+  @apply text-center md:basis-2/5;
+}
+.nav-logo h1 {
+  @apply text-3xl font-bold;
+}
+.mobile-nav {
+  @apply md:hidden;
+}
+.web-nav {
+  @apply hidden w-3/4 md:flex flex-row justify-between gap-6 basis-2/5;
+}
+.nav-list-row {
+  @apply w-full flex flex-row justify-around items-center  gap-4;
+}
+.nav-list-col {
+  @apply flex flex-col justify-between items-center gap-2 m-2;
+}
+.nav-item {
+  @apply font-normal text-3xl hover:text-black/50;
+  font-family: 'Ubuntu', sans-serif;
+}
+.active-link {
+  @apply font-semibold underline;
+}
+
+/* -------------------footer-------------------- */
+.footer-container {
+  @apply w-full flex flex-row justify-around items-center gap-8 bg-[rgb(81,184,231)] p-6;
+}
+.icon-list {
+  @apply w-full flex flex-row justify-around items-center gap-8;
+}
+.link-list {
+  @apply w-full flex flex-row justify-around items-center gap-8;
+}
+
+/* ----------------------property list------------------- */
+.property-list-container {
+  @apply w-full flex-1 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  2xl:grid-cols-4 gap-2 lg:gap-4 bg-gray-100 p-2 rounded-lg my-2;
+}
+
+/* --------------------------property card----------------- */
+
+.card-content-container {
+  @apply flex flex-col lg:flex-row lg:space-x-4;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.card-content-item {
+  @apply flex flex-row gap-2;
+}
+.card-footer-container {
+  @apply flex flex-row justify-between items-end;
+  font-family: 'Ubuntu', sans-serif;
+}
+/* -------------------------- filter -----------------------*/
+
+.filter-container {
+  @apply p-2 my-4 w-full lg:w-3/4 flex flex-col md:flex-row justify-end md:justify-center items-end md:items-center space-x-1 space-y-2;
+}
+.filter-input {
+  @apply w-full text-right cursor-not-allowed border border-gray-300 rounded-lg leading-normal p-1 mt-2 pr-1;
+}
+.filter-btn {
+  @apply bg-white p-2 rounded-lg border border-gray-300 flex flex-row justify-between items-center space-x-2 font-semibold  w-full text-xs;
+}
+.filter-submit {
+  @apply w-full  p-1 rounded-lg border border-indigo-500 bg-indigo-300 hover:bg-indigo-400 leading-normal;
+}
+.dropdown-panel {
+  @apply absolute right-0 top-12 origin-top-right bg-white rounded-lg shadow p-2 border border-gray-200 min-w-[60px] text-center z-10;
+}
+
+/* ---------------property detail page----------------- */
+.property-detail-container {
+  @apply w-full flex flex-col mt-4 mx-auto;
+}
+
+.description-icons {
+  @apply grid grid-cols-2;
+}
+
+/* ---------------------property modal----------------- */
+.modal-page-container {
+  @apply w-full flex flex-col p-1 gap-2;
+}
+.modal-info-container {
+  @apply w-full flex flex-col md:flex-row justify-between gap-2;
+}
+.modal-col-1 {
+  @apply w-full md:basis-4/5 border border-gray-100 shadow-sm rounded-sm p-2;
+}
+.modal-col-2 {
+  @apply w-full md:basis-1/5;
+}
+.modal-description-container {
+  @apply my-2 flex flex-col gap-2;
+}
+.modal-content-item {
+  @apply flex flex-row gap-2 text-base;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.modal-address-container {
+  @apply text-lg;
+  font-family: 'Ubuntu', sans-serif;
+}
+.modal-icons-container {
+  @apply text-sm grid grid-cols-2 gap-1;
+}
+.modal-icons-item {
+  @apply flex flex-row justify-start items-start gap-2;
+}
+
+/* ----------------------breadcrumb nav--------------- */
+.breadcrumb-nav {
+  @apply flex flex-row justify-start items-center gap-12 border border-gray-100 shadow-md p-4;
+}
+
+.breadcrumb-item {
+  @apply hover:underline;
+}
+
+/* ----------------------------disclosure group---------------- */
+.disclosure-group-container {
+  @apply w-full;
+}
