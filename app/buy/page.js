@@ -10,7 +10,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 
 import { fetchProperties } from '@/utils/fetchProperties'
 
-const page = () => {
+const BuyPage = () => {
   const queryClient = useQueryClient({
     defaultOptions: {
       queries: {
@@ -77,4 +77,4 @@ const page = () => {
   )
 }
 
-export default page
+export default BuyPage
